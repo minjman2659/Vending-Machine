@@ -31,6 +31,11 @@ type Card = {
   limit: number; // 사용 가능한 카드 금액
 };
 
+type Result = {
+  numberOfDrinks: Drinks;
+  change?: Change;
+};
+
 function vendingMachine(drinks: string[], money: Cash | Card) {
   if (!money) {
     throw new Error('금액을 넣어 주십시오');
@@ -42,7 +47,7 @@ function vendingMachine(drinks: string[], money: Cash | Card) {
     throw new Error(message);
   }
 
-  let result: any;
+  let result: Result;
   let error = null;
   switch (money.type) {
     case 'cash':
@@ -68,8 +73,7 @@ function vendingMachine(drinks: string[], money: Cash | Card) {
   return result;
 }
 
-
-// -------------------------------------------------------- modules
+// -------------------------------------------------------- Modules
 function getMoneySumAndNumberOfDrinks(drinks: string[]) {
   const numberOfDrinks: Drinks = {};
   let needMoneySum = 0;
