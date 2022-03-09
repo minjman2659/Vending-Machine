@@ -11,7 +11,7 @@ export type Cash = {
 
 export type Card = {
   type: 'card';
-  limit: number; // 사용 가능한 카드 금액
+  limit: number; // 사용 가능한 카드의 한도
 };
 
 export type Result = {
