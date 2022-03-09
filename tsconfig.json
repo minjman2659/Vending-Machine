@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2021",
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "moduleResolution": "Node",
+    "downlevelIteration": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}
