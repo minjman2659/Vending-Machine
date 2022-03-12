@@ -38,6 +38,8 @@ function vendingMachine(drinks: string[], money: Cash | Card) {
         result = { numberOfDrinks };
       }
       break;
+    default:
+      break;
   }
 
   if (error) throw new Error(error);
