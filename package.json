@@ -6,6 +6,9 @@
   "repository": "https://github.com/minjman2659/Vending-Machine.git",
   "author": "minjman2659 <minjman2659@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/node": "^17.0.21",
     "nodemon": "^2.0.15",
