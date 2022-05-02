@@ -1,50 +1,38 @@
-import { Cash, Card, Result } from 'types/types';
+import { Cash, Card, Drinks } from 'types/types';
+import { Coke, Water, Coffee } from 'products';
 import {
+  getNumberOfDrinks,
   checkNumberOfDrinks,
   getMoneySum,
-  getNumberOfDrinks,
   countChange,
-} from 'lib';
+} from 'service';
 
-function vendingMachine(drinks: string[], money: Cash | Card) {
-  if (!money) {
-    throw new Error('금액을 넣어 주십시오');
+export class VendingMachine {
+  private numberOfDrinks: Drinks;
+  coke = new Coke();
+  water = new Water();
+  coffee = new Coffee();
+
+  constructor(public drinks: string[], public money: Cash | Card) {}
+
+  getNumberOfDrinks() {
+    return getNumberOfDrinks(this.drinks);
   }
 
-  const { numberOfDrinks } = getNumberOfDrinks(drinks);
-  const { needMoneySum } = getMoneySum(drinks);
-
-  const { message } = checkNumberOfDrinks(numberOfDrinks);
-  if (message !== 'Possible') {
-    throw new Error(message);
+  checkNumberOfDrinks() {
+    return checkNumberOfDrinks(
+      this.numberOfDrinks,
+      this.coke,
+      this.water,
+      this.coffee
+    );
   }
 
-  let result: Result;
-  let error = null;
-  switch (money.type) {
-    case 'cash':
-      if (needMoneySum > money.amount) {
-        error = '현금이 부족합니다.';
-      } else {
-        const remainMoney = money.amount - needMoneySum;
-        const { change } = countChange(remainMoney);
-        result = { numberOfDrinks, change };
-      }
-      break;
-    case 'card':
-      if (needMoneySum > money.limit) {
-        error = '카드 한도를 초과합니다.';
-      } else {
-        result = { numberOfDrinks };
-      }
-      break;
-    default:
-      break;
+  getMoneySum() {
+    return getMoneySum(this.drinks, this.coke, this.water, this.coffee);
   }
 
-  if (error) throw new Error(error);
-
-  return result;
+  countChange(money: number) {
+    return countChange(money);
+  }
 }
-
-export default vendingMachine;

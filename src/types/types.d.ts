@@ -1,3 +1,10 @@
+export interface Product {
+  name: string;
+  price: number;
+  getCount: () => number;
+  setCount: (newCount: number) => number;
+}
+
 export type Drinks = {
   coke?: number;
   water?: number;
@@ -12,9 +19,4 @@ export type Cash = {
 export type Card = {
   type: 'card';
   limit: number; // 사용 가능한 카드의 한도
-};
-
-export type Result = {
-  numberOfDrinks: Drinks;
-  change?: any;
 };
