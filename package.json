@@ -7,8 +7,8 @@
   "author": "minjman2659 <minjman2659@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_PATH=build nodemon build/main.js --watch ./build",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "NODE_PATH=src nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node src/main.ts"
   },
   "devDependencies": {
     "@types/node": "^17.0.21",
