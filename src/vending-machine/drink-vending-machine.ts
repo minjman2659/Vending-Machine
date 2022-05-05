@@ -11,7 +11,7 @@ class DrinkVendingMachine implements VendingMachine {
 
   constructor(public products: Drinks, public money: Cash | Card) {}
 
-  useVendingMachine() {
+  work() {
     if (!this.products) {
       throw new Error('상품을 선택해 주세요');
     }

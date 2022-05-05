@@ -11,5 +11,5 @@ export interface Product {
 export interface VendingMachine {
   products: ProductCategory;
   money: Cash | Card;
-  useVendingMachine: () => void;
+  work: () => void;
 }

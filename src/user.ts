@@ -10,6 +10,6 @@ export class User {
   ) {}
 
   useVendingMachine() {
-    this.vendingMachine.useVendingMachine();
+    this.vendingMachine.work();
   }
 }
