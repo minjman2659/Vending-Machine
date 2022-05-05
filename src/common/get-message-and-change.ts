@@ -1,4 +1,4 @@
-import { Cash, Card, Change } from 'type/types';
+import { Cash, Card, Change } from 'types/types';
 import countChange from './count-change';
 
 function getMessageAndChange(money: Cash | Card, needCostSum: number) {

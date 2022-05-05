@@ -1,6 +1,6 @@
-import { VendingMachine } from 'type/interfaces';
-import { ProductCategory } from 'type/product-categories';
-import { Card, Cash } from 'type/types';
+import { VendingMachine } from 'types/interfaces';
+import { ProductCategory } from 'types/product-categories';
+import { Card, Cash } from 'types/types';
 
 export class User {
   constructor(

@@ -1,4 +1,4 @@
-import { Change } from 'type/types';
+import { Change } from 'types/types';
 
 function countChange(remainMoney: number) {
   const moneyTypes = [10000, 5000, 1000, 500, 100];

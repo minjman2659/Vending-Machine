@@ -1,8 +1,8 @@
-import { VendingMachine } from 'type/interfaces';
-import { ProductCategory } from 'type/product-categories';
-import { Cash, Card } from 'type/types';
+import { VendingMachine } from 'types/interfaces';
+import { ProductCategory } from 'types/product-categories';
+import { Cash, Card } from 'types/types';
 
-import { DrinkVendingMachine } from 'vending-machine';
+import { DrinkVendingMachine } from 'vending-machines';
 import { User } from 'user';
 
 function bootstrap(products: ProductCategory, money: Cash | Card) {

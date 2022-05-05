@@ -1,5 +1,5 @@
 import { ProductCategory } from './product-categories';
-import { Card, Cash, Change } from './types';
+import { Card, Cash } from './types';
 
 export interface Product {
   name: string;

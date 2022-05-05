@@ -1,7 +1,7 @@
-import { VendingMachine } from 'type/interfaces';
-import { Cash, Card } from 'type/types';
-import { Drinks } from 'type/product-categories';
-import { Coke, Water, Coffee } from 'product/drinks';
+import { VendingMachine } from 'types/interfaces';
+import { Cash, Card } from 'types/types';
+import { Drinks } from 'types/product-categories';
+import { Coke, Water, Coffee } from 'products/drinks';
 import { getMessageAndChange } from 'common';
 
 class DrinkVendingMachine implements VendingMachine {
