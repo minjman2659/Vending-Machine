@@ -2,7 +2,7 @@ import { VendingMachine } from 'type/interfaces';
 import { Cash, Card } from 'type/types';
 import { Drinks } from 'type/product-categories';
 import { Coke, Water, Coffee } from 'product/drinks';
-import { countChange, getMessageAndChange } from 'common';
+import { getMessageAndChange } from 'common';
 
 class DrinkVendingMachine implements VendingMachine {
   private coke = new Coke();
@@ -40,7 +40,7 @@ class DrinkVendingMachine implements VendingMachine {
     }
   }
 
-  checkNumberOfProducts() {
+  private checkNumberOfProducts() {
     let isPossible = true;
     const impossibleItems = [];
 
@@ -64,7 +64,7 @@ class DrinkVendingMachine implements VendingMachine {
     return { message };
   }
 
-  setProductCount() {
+  private setProductCount() {
     const newCokeCount = this.coke.getCount() - this.products.coke;
     const newWaterCount = this.water.getCount() - this.products.water;
     const newCoffeeCount = this.coffee.getCount() - this.products.coffee;
@@ -73,7 +73,7 @@ class DrinkVendingMachine implements VendingMachine {
     this.coffee.setCount(newCoffeeCount);
   }
 
-  getCostSum() {
+  private getCostSum() {
     let needCostSum: number = 0;
     if (this.products.coke) {
       needCostSum += this.products.coke * this.coke.price;
@@ -86,10 +86,6 @@ class DrinkVendingMachine implements VendingMachine {
     }
 
     return { needCostSum };
-  }
-
-  countChange(money: number) {
-    return countChange(money);
   }
 }
 
