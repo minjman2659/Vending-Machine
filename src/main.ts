@@ -27,7 +27,7 @@ const products: ProductCategory = {
 
 const cash: Cash = {
   type: 'cash',
-  amount: 31600,
+  amount: 81200,
 };
 
 const card: Card = {
@@ -35,5 +35,5 @@ const card: Card = {
   limit: 100000,
 };
 
-bootstrap(products, card);
+bootstrap(products, cash);
 console.log('Bye ~ ^^');

@@ -36,7 +36,7 @@ class DrinkVendingMachine implements VendingMachine {
 
     console.log(returnMessage);
     if (change) {
-      console.log(change);
+      console.log('거스름 돈 : ', change);
     }
   }
 

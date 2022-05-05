@@ -8,7 +8,9 @@ function getMessageAndChange(money: Cash | Card, needCostSum: number) {
   switch (money.type) {
     case 'cash':
       if (money.amount < needCostSum) {
-        throw new Error('현금이 부족합니다');
+        throw new Error(
+          `현금이 ${needCostSum - money.amount}원 만큼 부족합니다`
+        );
       }
       const remainMoney = money.amount - needCostSum;
       if (remainMoney === 0) {
