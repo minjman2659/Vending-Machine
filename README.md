@@ -1,6 +1,6 @@
 # Vending-Machine(OOP)
 
-심심해서 만들어본 Vending-Machine by TS <br />
+OOP를 공부하고자 만들어본 Vending-Machine by TS <br />
 자판기에서 사용자가 원하는 음료수들을 얻기까지의 메커니즘을 TS(OOP)로 구현 <br />
 ![image](https://user-images.githubusercontent.com/81504356/157370464-308f2288-2718-402b-94b0-0775f1a6ac52.png)
 ## 전제조건
