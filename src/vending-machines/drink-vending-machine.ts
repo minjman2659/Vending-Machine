@@ -44,15 +44,15 @@ class DrinkVendingMachine implements VendingMachine {
     let isPossible = true;
     const impossibleItems = [];
 
-    if (this.products.coke > this.coke.getCount()) {
+    if (this.products.coke > this.coke.count) {
       impossibleItems.push('콜라');
       isPossible = false;
     }
-    if (this.products.water > this.water.getCount()) {
+    if (this.products.water > this.water.count) {
       impossibleItems.push('물');
       isPossible = false;
     }
-    if (this.products.coffee > this.coffee.getCount()) {
+    if (this.products.coffee > this.coffee.count) {
       impossibleItems.push('커피');
       isPossible = false;
     }
@@ -65,12 +65,12 @@ class DrinkVendingMachine implements VendingMachine {
   }
 
   private setProductCount() {
-    const newCokeCount = this.coke.getCount() - this.products.coke;
-    const newWaterCount = this.water.getCount() - this.products.water;
-    const newCoffeeCount = this.coffee.getCount() - this.products.coffee;
-    this.coke.setCount(newCokeCount);
-    this.water.setCount(newWaterCount);
-    this.coffee.setCount(newCoffeeCount);
+    const newCokeCount = this.coke.count - this.products.coke;
+    const newWaterCount = this.water.count - this.products.water;
+    const newCoffeeCount = this.coffee.count - this.products.coffee;
+    this.coke.count = newCokeCount;
+    this.water.count = newWaterCount;
+    this.coffee.count = newCoffeeCount;
   }
 
   private getCostSum() {
