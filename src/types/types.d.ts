@@ -15,3 +15,12 @@ export type Change = {
   5000?: number;
   10000?: number;
 };
+
+export type Product = {
+  name: string;
+  price: number;
+  get count(): number;
+  set count(newCount: number);
+}
+
+export type Produces = Product[];

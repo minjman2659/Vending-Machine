@@ -1,4 +1,4 @@
-import { Product } from 'types/interfaces';
+import { Product } from 'types/types';
 
 export class Coke implements Product {
   name = 'coke';
