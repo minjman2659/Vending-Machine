@@ -1,1 +1,1 @@
-export { default as DrinkVendingMachine } from './drink-vending-machine';
+export { default as VendingMachine } from './vending-machine';

@@ -1,20 +1,12 @@
-import { ProductCategory } from './product-categories';
-import { Card, Cash } from './types';
+import { Card, Cash, ProductToBuy } from './types';
 
 export interface IUser {
-  products: ProductCategory;
+  vendingMachine: IVendingMachine;
+  products: ProductToBuy[];
   money: Cash | Card;
-  vendingMachine: VendingMachine;
   useVendingMachine(): void;
 }
 
-export interface VendingMachine {
-  work(products: ProductCategory, money: Cash | Card): void;
-}
-
-export interface Product {
-  name: string;
-  price: number;
-  get count(): number;
-  set count(newCount: number);
+export interface IVendingMachine {
+  work(products: ProductToBuy[], money: Cash | Card): void;
 }

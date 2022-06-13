@@ -1,27 +1,43 @@
-import { VendingMachine } from 'types/interfaces';
-import { ProductCategory } from 'types/product-categories';
-import { Cash, Card } from 'types/types';
+import { Cash, Card, ProductToBuy } from 'types/types';
 import { User } from 'user';
-import { DrinkVendingMachine } from 'vending-machines';
+import { VendingMachine } from 'vending-machines';
+import { Coke, Water, Coffee } from 'products/drinks';
+import { Cheetos, Goraebob, Chocochip } from 'products/snacks';
 
-function bootstrap(products: ProductCategory, money: Cash | Card) {
-  let vendingMachine: VendingMachine = null;
-  if (products.type === 'drinks') {
-    vendingMachine = new DrinkVendingMachine();
-  }
+type Bootstrap = {
+  vendingMachine: VendingMachine;
+  products: ProductToBuy[];
+  money: Cash | Card;
+};
 
-  const user = new User(products, money, vendingMachine);
+function bootstrap({ vendingMachine, products, money }: Bootstrap) {
+  const user = new User(vendingMachine, products, money);
   user.useVendingMachine();
 }
 
 // -------------------------------------------------------------------------------
 
-const products: ProductCategory = {
-  type: 'drinks',
-  coke: 10,
-  water: 50,
-  coffee: 20,
-};
+const drinksToBuy: ProductToBuy[] = [
+  { name: 'coke', count: 10 },
+  { name: 'water', count: 50 },
+  { name: 'coffee', count: 20 },
+];
+const snacksToBuy: ProductToBuy[] = [
+  { name: 'cheetos', count: 10 },
+  { name: 'goraebob', count: 10 },
+  { name: 'chocochip', count: 10 },
+];
+
+const drinkVendingMachine = new VendingMachine([
+  new Coke(),
+  new Water(),
+  new Coffee(),
+]);
+const snackVendingMachine = new VendingMachine([
+  new Cheetos(),
+  new Goraebob(),
+  new Chocochip(),
+]);
 
 const cash: Cash = {
   type: 'cash',
@@ -33,7 +49,15 @@ const card: Card = {
   limit: 55000,
 };
 
-bootstrap(products, cash);
+bootstrap({
+  vendingMachine: drinkVendingMachine,
+  products: drinksToBuy,
+  money: cash,
+});
 console.log('Bye ~ ^^');
-bootstrap(products, card);
+bootstrap({
+  vendingMachine: snackVendingMachine,
+  products: snacksToBuy,
+  money: card,
+});
 console.log('Bye ~ ^^');

@@ -1,12 +1,11 @@
-import { IUser, VendingMachine } from 'types/interfaces';
-import { Cash, Card } from 'types/types';
-import { ProductCategory } from './types/product-categories.d';
+import { IUser, IVendingMachine } from 'types/interfaces';
+import { Cash, Card, ProductToBuy } from 'types/types';
 
 export class User implements IUser {
   constructor(
-    public products: ProductCategory,
-    public money: Cash | Card,
-    public vendingMachine: VendingMachine
+    public vendingMachine: IVendingMachine,
+    public products: ProductToBuy[],
+    public money: Cash | Card
   ) {}
 
   useVendingMachine() {

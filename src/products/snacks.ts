@@ -1,8 +1,8 @@
 import { Product } from 'types/types';
 
-export class Coke implements Product {
-  name = 'coke';
-  price = 1100;
+export class Cheetos implements Product {
+  name = 'cheetos';
+  price = 1500;
   private _count = 50;
   get count() {
     return this._count;
@@ -12,9 +12,9 @@ export class Coke implements Product {
   }
 }
 
-export class Water implements Product {
-  name = 'water';
-  price = 600;
+export class Goraebob implements Product {
+  name = 'goraebob';
+  price = 1000;
   private _count = 50;
   get count() {
     return this._count;
@@ -24,9 +24,9 @@ export class Water implements Product {
   }
 }
 
-export class Coffee implements Product {
-  name = 'coffee';
-  price = 700;
+export class Chocochip implements Product {
+  name = 'chocochip';
+  price = 2000;
   private _count = 50;
   get count() {
     return this._count;
