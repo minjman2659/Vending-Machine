@@ -6,7 +6,7 @@ class VendingMachine implements IVendingMachine {
   constructor(private products: Product[]) {}
 
   work(products: ProductToBuy[], money: Cash | Card) {
-    if (!products) {
+    if (!products || products.length === 0) {
       throw new Error('구매할 상품을 선택해 주세요');
     }
     if (!money) {
