@@ -1,6 +1,6 @@
 import { Cash, Card, ProductToBuy } from 'types/types';
 import { User } from 'user';
-import { VendingMachine } from 'vending-machines';
+import { VendingMachine } from 'vending-machine';
 import { Coke, Water, Coffee } from 'products/drinks';
 import { Cheetos, Goraebob, Chocochip } from 'products/snacks';
 

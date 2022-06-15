@@ -2,7 +2,7 @@ import { IVendingMachine } from 'types/interfaces';
 import { Cash, Card, Product, ProductToBuy } from 'types/types';
 import { getMessageAndChange } from 'common';
 
-class VendingMachine implements IVendingMachine {
+export class VendingMachine implements IVendingMachine {
   constructor(private products: Product[]) {}
 
   work(products: ProductToBuy[], money: Cash | Card) {
@@ -82,5 +82,3 @@ class VendingMachine implements IVendingMachine {
     return { needCostSum };
   }
 }
-
-export default VendingMachine;
